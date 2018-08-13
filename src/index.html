@@ -8,6 +8,8 @@
   <link rel="stylesheet" type="text/css" href="css/default.css">
   <link rel="stylesheet" type="text/css" href="css/common.css">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+  <link href="css/styles.imageuploader.css" rel="stylesheet" type="text/css">
   <style type="text/css">
     html, body {
       margin: 0;
@@ -45,7 +47,22 @@
 
       <div id="right-side">
         <div id="first" class="active">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor.</p>
+          <div class="htmleaf-container">
+            <section role="main" class="l-main" style="margin-top:10px;margin-bottom:50px;width: 800px">
+              <!--<header class="site-header">-->
+                <!--<h1 class="site-title l-site-title" style="font-size:1.2em;">jquery多文件上传插件效果演示</h1>-->
+              <!--</header>-->
+              <div class="uploader__box js-uploader__box l-center-box">
+                <form action="#" method="POST">
+                  <div class="uploader__contents">
+                    <label class="button button--secondary" for="fileinput">请选择文件</label>
+                    <input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">
+                  </div>
+                  <input class="button button--big-bottom" type="submit" value="Upload Selected Files">
+                </form>
+              </div>
+            </section>
+          </div>
         </div>
         <div id="second">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>
@@ -60,9 +77,20 @@
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 <script src='js/jquery-2.1.0.min.js'></script>
 <script src='js/index.js'></script>
-<script>if (window.module) module = window.module;</script>
-<script>
-
+<script src="js/jquery.imageuploader.js"></script>
+<script type="text/javascript">
+  (function(){
+    var options = {};
+    $('.js-uploader__box').uploader({
+      'selectButtonCopy':'请选择或拖拽文件',
+      'instructionsCopy':'你可以选择或拖拽多个文件',
+      'submitButtonCopy':'上传选择的文件',
+      'furtherInstructionsCopy':'你可以选择或拖拽更多的文件',
+      'secondarySelectButtonCopy':'选择更多的文件'
+    });
+  }());
 </script>
+<script>if (window.module) module = window.module;</script>
+
 </body>
 </html>
