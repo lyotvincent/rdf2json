@@ -184,14 +184,28 @@
                     for (var i = 0; i < state.fileBatch.length; i++) {
                         data.append('files[]', state.fileBatch[i].file, state.fileBatch[i].fileName);
                     }
-                    $.ajax({
-                        type: 'POST',
-                        url: options.ajaxUrl,
-                        data: data,
-                        cache: false,
-                        contentType: false,
-                        processData: false
-                    });
+                  var zerorpc = require("zerorpc");
+
+                  var client = new zerorpc.Client({timeout:3600*24, heartbeatInterval: 3600*24*1000});
+                  client.connect("tcp://127.0.0.1:42142");
+                    //calls the method on the python object
+                  var path_length = state.fileBatch[0].file["path"].length;
+                  var file_length = state.fileBatch[0].fileName.length;
+                  var file_path = state.fileBatch[0].file["path"].substring(0, path_length-file_length);
+                  client.invoke("hello", state.fileBatch[0].filePath, file_path, state.fileBatch[0].fileName, function(error, reply, streaming) {
+                    if(error){
+                      console.log("ERROR: ", error);
+                    }
+                    console.log(reply);
+                  });
+                    // $.ajax({
+                    //     type: 'POST',
+                    //     url: options.ajaxUrl,
+                    //     data: data,
+                    //     cache: false,
+                    //     contentType: false,
+                    //     processData: false
+                    // });
                 }
             }
 

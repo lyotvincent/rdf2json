@@ -76,13 +76,13 @@ $('.about').click(function () {
   $('#third').addClass('active');
   $('#fourth').removeClass('active');
 });
-var zerorpc = require("zerorpc");
-var client = new zerorpc.Client({ timeout: 3600*24, heartbeatInterval: 3600*1000*24});
-client.connect("tcp://127.0.0.1:42142");
-client.invoke("train", (error, res) =>{
-  if(error) {
-    console.log(error);
-  } else {
-    console.log('success');
-  }
-})
+// var zerorpc = require("zerorpc");
+// var client = new zerorpc.Client({ timeout: 3600*24, heartbeatInterval: 3600*1000*24});
+// client.connect("tcp://127.0.0.1:42142");
+// client.invoke("train", (error, res) =>{
+//   if(error) {
+//     console.log(error);
+//   } else {
+//     console.log('success');
+//   }
+// })

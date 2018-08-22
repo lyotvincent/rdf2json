@@ -8,7 +8,7 @@ let pyPort = null;
 
 const createPyProc = () => {
   let port = '42142';
-  let script = path.join(__dirname, 'transform.py');
+  let script = path.join(__dirname, '../RdfToJson.py');
   pyProc = require('child_process').spawn('python', [script, port]);
   if (pyProc != null) {
     console.log('child process success');
