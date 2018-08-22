@@ -29,12 +29,14 @@
     <div id="wrapper">
       <div id="left-side">
         <ul>
-          <li class="home active"><i class="fa fa-home fa-2x"></i>
+          <li class="convert active"><i class="fa fa-home fa-2x"></i>
             &nbsp;&nbsp;HOME
           </li>
-          <li class="convert"><i class="fa fa-file-o fa-2x"></i>
-            &nbsp;&nbsp;CONVERT
-          </li>
+          <!--<li>-->
+          <!--</li>-->
+          <!--<li class="convert active"><i class="fa fa-file-o fa-2x"></i>-->
+            <!--&nbsp;&nbsp;CONVERT-->
+          <!--</li>-->
           <li class="about"><i class="fa fa-user-o fa-2x"></i>
             &nbsp;&nbsp;ABOUT
           </li>
@@ -42,15 +44,33 @@
       </div>
 
       <div id="border">
-        <div id="line" class="one"></div>
+        <div id="line" class="two"></div>
       </div>
 
       <div id="right-side">
-        <div id="first" class="active">
+        <div id="first">
+          <!--<div class="htmleaf-container">-->
+            <!--<section role="main" class="l-main" style="margin-top:10px;margin-bottom:50px;width: 800px">-->
+              <!--&lt;!&ndash;<header class="site-header">&ndash;&gt;-->
+                <!--&lt;!&ndash;<h1 class="site-title l-site-title" style="font-size:1.2em;">jquery多文件上传插件效果演示</h1>&ndash;&gt;-->
+              <!--&lt;!&ndash;</header>&ndash;&gt;-->
+              <!--<div class="uploader__box js-uploader__box l-center-box">-->
+                <!--<form action="#" method="POST">-->
+                  <!--<div class="uploader__contents">-->
+                    <!--<label class="button button&#45;&#45;secondary" for="fileinput">请选择文件</label>-->
+                    <!--<input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">-->
+                  <!--</div>-->
+                  <!--<input class="button button&#45;&#45;big-bottom" type="submit" value="Upload Selected Files">-->
+                <!--</form>-->
+              <!--</div>-->
+            <!--</section>-->
+          <!--</div>-->
+        </div>
+        <div id="second"  class="active">
           <div class="htmleaf-container">
             <section role="main" class="l-main" style="margin-top:10px;margin-bottom:50px;width: 800px">
               <!--<header class="site-header">-->
-                <!--<h1 class="site-title l-site-title" style="font-size:1.2em;">jquery多文件上传插件效果演示</h1>-->
+              <!--<h1 class="site-title l-site-title" style="font-size:1.2em;">jquery多文件上传插件效果演示</h1>-->
               <!--</header>-->
               <div class="uploader__box js-uploader__box l-center-box">
                 <form action="#" method="POST">
@@ -63,9 +83,6 @@
               </div>
             </section>
           </div>
-        </div>
-        <div id="second">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>
         </div>
         <div id="third">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>
@@ -82,11 +99,11 @@
   (function(){
     var options = {};
     $('.js-uploader__box').uploader({
-      'selectButtonCopy':'请选择或拖拽文件',
-      'instructionsCopy':'你可以选择或拖拽多个文件',
-      'submitButtonCopy':'上传选择的文件',
-      'furtherInstructionsCopy':'你可以选择或拖拽更多的文件',
-      'secondarySelectButtonCopy':'选择更多的文件'
+      // 'selectButtonCopy':'请选择或拖拽文件',
+      // 'instructionsCopy':'你可以选择或拖拽多个文件',
+      // 'submitButtonCopy':'上传选择的文件',
+      // 'furtherInstructionsCopy':'你可以选择或拖拽更多的文件',
+      // 'secondarySelectButtonCopy':'选择更多的文件'
     });
   }());
 </script>

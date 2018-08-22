@@ -9,10 +9,10 @@
                 submitButtonCopy: 'Upload Selected Files',
                 instructionsCopy: 'Drag and Drop, or',
                 furtherInstructionsCopy: 'Your can also drop more files, or',
-                selectButtonCopy: 'Select Files',
+                selectButtonCopy: 'Select File',
                 secondarySelectButtonCopy: 'Select More Files',
                 dropZone: $(this),
-                fileTypeWhiteList: ['jpg', 'png', 'jpeg', 'gif', 'pdf'],
+                fileTypeWhiteList: ['rdf'],
                 badFileTypeMessage: 'Sorry, we\'re unable to accept this type of file.',
                 ajaxUrl: '/ajax/upload',
                 testMode: false
@@ -57,8 +57,8 @@
                 dom.contentsContainer
                     .append(dom.instructions)
                     .append(dom.selectButton);
-                dom.furtherInstructions
-                    .append(dom.secondarySelectButton);
+                // dom.furtherInstructions
+                //     .append(dom.secondarySelectButton);
                 dom.uploaderBox
                     .append(dom.fileList)
                     .append(dom.contentsContainer)
@@ -78,8 +78,8 @@
                 // hack for being able selecting the same file name twice
                 dom.selectButton.on('click', function () { this.value = null; });
                 dom.selectButton.on('change', selectFilesHandler);
-                dom.secondarySelectButton.on('click', function () { this.value = null; });
-                dom.secondarySelectButton.on('change', selectFilesHandler);
+                // dom.secondarySelectButton.on('click', function () { this.value = null; });
+                // dom.secondarySelectButton.on('change', selectFilesHandler);
 
                 // handle the submit click
                 dom.submitButton.on('click', uploadSubmitHandler);
@@ -214,11 +214,11 @@
             function renderControls () {
                 if (dom.fileList.children().size() !== 0) {
                     dom.submitButton.removeClass('uploader__hide');
-                    dom.furtherInstructions.removeClass('uploader__hide');
+                    // dom.furtherInstructions.removeClass('uploader__hide');
                     dom.contentsContainer.addClass('uploader__hide');
                 } else {
                     dom.submitButton.addClass('uploader__hide');
-                    dom.furtherInstructions.addClass('uploader__hide');
+                    // dom.furtherInstructions.addClass('uploader__hide');
                     dom.contentsContainer.removeClass('uploader__hide');
                 }
             }
@@ -249,3 +249,7 @@
         });
     };
 }(jQuery));
+
+function uploadtest() {
+  console.log("hello worod")
+}
