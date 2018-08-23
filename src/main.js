@@ -1,6 +1,5 @@
-import { app, BrowserWindow } from 'electron';
-
-
+// import { app, BrowserWindow } from 'electron';
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
 let pyProc = null;
@@ -8,7 +7,7 @@ let pyPort = null;
 
 const createPyProc = () => {
   let port = '42142';
-  let script = path.join(__dirname, '../RdfToJson.py');
+  let script = path.join(__dirname, '../src/RdfToJson.py');
   pyProc = require('child_process').spawn('python', [script, port]);
   if (pyProc != null) {
     console.log('child process success');

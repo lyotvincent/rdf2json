@@ -48,6 +48,8 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.3",
+    "electron-prebuilt-china": "^1.4.13",
+    "electron-settings": "^3.2.0",
     "electron-squirrel-startup": "^1.0.0",
     "zeromq": "^4.6.0",
     "zerorpc": "^0.9.7"
