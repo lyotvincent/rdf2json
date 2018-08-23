@@ -3,6 +3,7 @@
  */
 /* global jQuery FormData FileReader */
 (function ($) {
+  $('#progress-control').hide();  //隐藏进度条
     $.fn.uploader = function (options, testMode) {
         return this.each(function (index) {
             options = $.extend({
@@ -180,6 +181,13 @@
 
             function uploadSubmitHandler () {
                 if (state.fileBatch.length !== 0) {
+                    //进度条
+                  var timer =  window.setInterval(progressAdd,1000*60);//每隔1min调用一次show函数, 防止用户以为卡死
+                  $('#progress-control').show();
+                  $('#progress-bar-transform').css('width', '1%');
+                  $('#progress-bar-transform').text('1%');
+                  $('#status').text("transform...");
+
                     var data = new FormData();
                     for (var i = 0; i < state.fileBatch.length; i++) {
                         data.append('files[]', state.fileBatch[i].file, state.fileBatch[i].fileName);
@@ -193,6 +201,8 @@
                   var file_length = state.fileBatch[0].fileName.length;
                   var file_path = state.fileBatch[0].file["path"].substring(0, path_length-file_length);
                   client.invoke("hello", state.fileBatch[0].filePath, file_path, state.fileBatch[0].fileName, function(error, reply, streaming) {
+                    $('#progress-bar-transform').css('width', '100%');
+                    $('#progress-bar-transform').text('100%');
                     if(error){
                       console.log("ERROR: ", error);
                     }
@@ -264,6 +274,18 @@
     };
 }(jQuery));
 
-function uploadtest() {
-  console.log("hello worod")
+//伪进度条
+function progressAdd() {
+  var result_width = GetProgressWidth($('#progress-bar-transform'));
+  if (result_width < 99){
+    $('#progress-bar-transform').css('width', ++result_width[0] + '%');
+    $('#progress-bar-transform').text(result_width[0] + '%');
+  }
+}
+
+function GetProgressWidth(selector) {
+  var width = selector[0].style.width;
+  var reg = /\d+/g;
+  var result_width = width.match(reg);
+  return result_width;
 }

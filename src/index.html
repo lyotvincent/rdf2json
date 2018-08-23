@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/default.css">
   <link rel="stylesheet" type="text/css" href="css/common.css">
   <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
   <link href="css/styles.imageuploader.css" rel="stylesheet" type="text/css">
 
@@ -87,29 +87,30 @@
             </section>
 
           </div>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    <span class="sr-only">60% Complete</span>
-                </div>
+          <div id="progress-control" class="progress" style="width: 560px">
+            <div id="progress-bar-transform" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+              <span class="sr-only">40% Complete (success)</span>
             </div>
+          </div>
         </div>
         <div id="third">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    <span class="sr-only">60% Complete</span>
-                </div>
-            </div>
+          <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>-->
+            <!--<div class="progress">-->
+                <!--<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">-->
+                    <!--<span class="sr-only">60% Complete</span>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
       </div>
     </div>
   </div>
 </div>
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
+<!--<script src="js/jquery-3.3.1.min.js"></script>-->
 <script src="js/jquery-2.1.0.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+
 <script src="js/jquery.imageuploader.js"></script>
 <script type="text/javascript">
   (function(){
